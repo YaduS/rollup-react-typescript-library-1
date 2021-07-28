@@ -1,9 +1,5 @@
-import React from 'react';
-import AllProjectsSummary from './components/AllProjectsSummary';
-import SectionWrapper from './components/SectionWrapper';
+import AllProjectsDashboard from './pages/AllProjectsDashboard';
+import SingleProjectDashboard from './pages/SingleProjectDashboard';
+import WorkloadDashboard from './pages/WorkloadDashboard';
 
-const SayHello = ({ name }) => <div>Hey {name}, say hello to TypeScript.</div>;
-
-export default SayHello;
-
-export { SectionWrapper, AllProjectsSummary };
+export { AllProjectsDashboard, SingleProjectDashboard, WorkloadDashboard };
