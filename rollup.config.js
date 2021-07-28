@@ -1,5 +1,6 @@
 import babel from '@rollup/plugin-babel';
 import json from '@rollup/plugin-json';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { defineConfig } from 'rollup';
 import deletePlugin from 'rollup-plugin-delete';
 import postcss from 'rollup-plugin-postcss';
@@ -18,6 +19,9 @@ export default defineConfig({
     },
   ],
   plugins: [
+    nodeResolve({
+      extensions: ['.ts', '.tsx'],
+    }),
     json(),
     postcss({
       // supports scss loaders out of the box so no need to specify anything
