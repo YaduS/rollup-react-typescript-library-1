@@ -29,7 +29,11 @@ export default defineConfig({
       extract: 'css/styles.css', // this will be inside dist/cjs and dist/esm
     }),
     babel({
-      presets: ['@babel/preset-react'],
+      presets: [
+        '@babel/preset-react',
+        '@babel/preset-typescript',
+        // ['@babel/preset-typescript', { isTsx: true }], // is this not needed?
+      ],
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
       exclude: './node_modules/**', // is this necessary?
     }),
