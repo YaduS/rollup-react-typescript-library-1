@@ -7,7 +7,7 @@ import {
   WorkloadTransformedData,
 } from './reports.helper';
 import Select from './Select';
-// import classes from './WorkloadSummary.module.scss';
+import classes from './WorkloadSummary.module.scss';
 import WorkloadTable from './WorkloadTable';
 
 const defaultYear = new Date().getFullYear();
@@ -89,7 +89,7 @@ const WorkloadSummary = () => {
   return (
     <section>
       <h2>Workload Summary</h2>
-      <form className={'form'}>
+      <form className={classes['form']}>
         <Select
           options={monthsArray}
           defaultValue={defaultMonth}
@@ -114,7 +114,7 @@ const WorkloadSummary = () => {
           style={{ 'min-width': '400px' }}
         ></Select>
       </form>
-      <div className={'table-container'}>
+      <div className={classes['table-container']}>
         <WorkloadTable data={workloadData} />
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-// import classes from './Select.module.scss';
+import classes from './Select.module.scss';
 
 // todo: check if there is aliasing available for interfaces like there is for types
 interface selectComponentProps {
@@ -17,7 +17,7 @@ const Select = forwardRef<HTMLSelectElement, selectComponentProps>(
     const { options, label, ...selectProps } = props;
 
     return (
-      <div className={'select-container'}>
+      <div className={classes['select-container']}>
         {label && <label>{label}</label>}
         <select ref={ref} {...selectProps}>
           {options.map((option) => (

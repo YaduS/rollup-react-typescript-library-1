@@ -1,5 +1,5 @@
 import React from 'react';
-// import classes from './Table.module.scss';
+import classes from './Table.module.scss';
 
 // todo: figure out how to pass generics to function components so that type of "data" can be made dynamic
 // i,e something like => interface TableProps<DataType> {
@@ -25,7 +25,9 @@ const Table = (props: TableProps) => {
   } = props;
 
   return (
-    <table className={`${'table'} ${fullWidth && 'full-width'}`}>
+    <table
+      className={`${classes['table']} ${fullWidth && classes['full-width']}`}
+    >
       {!hideHeader && (
         <thead>
           <tr>

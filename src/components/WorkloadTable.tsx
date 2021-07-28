@@ -1,6 +1,6 @@
 import React from 'react';
 import { DaysMap, monthsArray } from './reports.helper';
-// import classes from './WorkloadTable.module.scss';
+import classes from './WorkloadTable.module.scss';
 
 // todo: update this interface
 interface WorkloadTableProps {
@@ -34,7 +34,7 @@ const WorkloadTable = (props: WorkloadTableProps) => {
   // console.log('workLoadData: ', workLoadData); // tbr --ys
   // console.log('daysArray: ', daysArray);   // tbr --ys
   return (
-    <table className={'workload-table'}>
+    <table className={classes['workload-table']}>
       <thead>
         <tr>
           <th>Name</th>
@@ -54,17 +54,17 @@ const WorkloadTable = (props: WorkloadTableProps) => {
             <td>{userLoad.userName}</td>
             {userLoad.taskSplits.map((taskSplit: any) => {
               let classNames = '';
-              if (taskSplit.isHoliday) classNames += 'holiday';
+              if (taskSplit.isHoliday) classNames += classes['holiday'];
               else if (taskSplit.totalHours > MAX_HOURS)
-                classNames += 'overload';
-              else classNames += 'safe';
+                classNames += classes['overload'];
+              else classNames += classes['safe'];
 
               return (
                 <td key={taskSplit.dateString} className={classNames}>
-                  <div className={'estimated-effort'}>
+                  <div className={classes['estimated-effort']}>
                     {parseFloat(taskSplit.totalHours.toFixed(2))}
                   </div>
-                  <div className={'actual-effort'}>
+                  <div className={classes['actual-effort']}>
                     <i>({parseFloat(taskSplit.burnedHours.toFixed(2))})</i>
                   </div>
                 </td>

@@ -8,7 +8,7 @@ const SectionWrapper = (props: {
 }) => {
   const { header, children, fullWidth } = props;
   return (
-    <section className={'reports-section'}>
+    <section className={classes['reports-section']}>
       <h2 className={classes['reports-section__header']}>
         {header} something else
       </h2>
