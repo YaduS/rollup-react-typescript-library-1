@@ -8,6 +8,7 @@ import postcss from 'rollup-plugin-postcss';
 
 // defineConfig used for intellisense
 export default defineConfig({
+  external: ['react', 'react-dom'],
   input: 'src/index.tsx',
   output: [
     {
