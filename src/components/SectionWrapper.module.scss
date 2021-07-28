@@ -1,0 +1,22 @@
+.reports-section {
+  // --section-content-max-height is defined higher up in the hierarchy
+
+  margin-top: 1.2rem;
+
+  .reports-section__header {
+    display: block;
+    margin: 0;
+    margin-bottom: 0.4rem;
+  }
+  .reports-section__content {
+    border: 1px solid grey;
+    display: inline-block;
+    width: auto;
+    overflow: auto;
+    max-height: var(--section-content-max-height, 400px);
+    &.full-width {
+      display: block;
+      width: 100%;
+    }
+  }
+}
